@@ -28,4 +28,10 @@ public class FoodCategoryResource {
         List<FoodCategory> foodCategories = foodCategoryService.findAllCategories();
         return new ResponseEntity<>(foodCategories, HttpStatus.OK);
     }
+
+    @GetMapping("/name")
+    public ResponseEntity<List<String>> getAllFoodCategoriesName(){
+        List<String> foodCategories = foodCategoryService.getAllCategoriesName();
+        return new ResponseEntity<>(foodCategories, HttpStatus.OK);
+    }
 }

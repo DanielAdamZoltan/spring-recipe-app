@@ -21,5 +21,7 @@ public class CuisineService {
 
     public List<Cuisine> findAllCuisines(){ return cuisineRepository.findAll(); }
 
+    public List<String> getAllCuisinesName(){ return cuisineRepository.getCuisineByName();}
+
 
 }
