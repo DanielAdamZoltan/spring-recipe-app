@@ -11,18 +11,18 @@ import java.util.List;
 
 @Service
 @Transactional
-public class IngredtientsService {
+public class IngredtientService {
     private final IngredientRepository ingredientRepository;
 
     @Autowired
-    public IngredtientsService(IngredientRepository ingredientRepository) {
+    public IngredtientService(IngredientRepository ingredientRepository) {
         this.ingredientRepository = ingredientRepository;
     }
 
     public List<Ingredient> findAllIngredientList(){ return ingredientRepository.findAll(); }
 
     public Ingredient findIngredientById(Long id){
-        return ingredientRepository.findIngredientBy(id)
+        return ingredientRepository.findIngredientById(id)
                 .orElseThrow(() -> new NotFoundException("Ingredient by ID " + id + "was not found!"));
     }
 

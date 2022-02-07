@@ -13,14 +13,15 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "ingredients")
-public class Ingredient implements Serializable {
+@Table(name = "food_categories")
+public class FoodCategory implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ingredient_id")
+    @Column(name = "category_id")
     Long id;
 
-    @Column(name = "ingredient_name", length = 50, unique = true)
+    @Column(name = "category_name", length = 16)
     String name;
+
 }

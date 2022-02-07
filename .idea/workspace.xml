@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b528231-1752-486f-9e68-96ee53f52349" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/exception/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/Ingredient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/IngredientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/IngredtientsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/Cuisine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/FoodCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/CuisineRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/FoodCategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/CuisineResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/FoodCategoryResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/IngredientResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/CuisineService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/FoodCategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/IngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/IngredientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/IngredtientsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/IngredtientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +29,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -58,6 +66,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -73,7 +85,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.RecipeServiceApplication">
+  <component name="RunManager" selected="Spring Boot.DiscoveryServerApplication">
     <configuration name="DiscoveryServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="discovery-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="demo.server.discoveryserver.DiscoveryServerApplication" />
@@ -107,6 +119,7 @@
       <workItem from="1643966381860" duration="388000" />
       <workItem from="1643966823181" duration="1340000" />
       <workItem from="1644006751501" duration="4780000" />
+      <workItem from="1644230390885" duration="5448000" />
     </task>
     <servers />
   </component>
@@ -123,7 +136,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

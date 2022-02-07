@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.Optional;
 
 public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
-    Optional<Ingredient> findIngredientBy(Long id);
+    Optional<Ingredient> findIngredientById(Long id);
 
 //    @Query("SELECT name FROM ingredients WHERE id=?1")
     Optional<Ingredient> findIngredientByName(String name);
