@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -57,6 +59,12 @@ public class Recipe {
     @Column(name = "season", length = 1, nullable = false)
     private int season;
 
-    @OneToMany(mappedBy = "recipe")
-    private Set<RecipeIngredient> recipeIngredientId;
+    @Column(name = "recipe_ingredient_id")
+//    @OneToMany(mappedBy = "recipe")
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @JoinColumn(name = "recipe_ingredient_id")
+    private List<RecipeIngredient> recipeIngredientId = new ArrayList<>();
 }
