@@ -1,7 +1,6 @@
 package danieladamzoltan.recipeservice.resources;
 
-import danieladamzoltan.recipeservice.models.FoodCategory;
-import danieladamzoltan.recipeservice.models.Ingredient;
+import danieladamzoltan.recipeservice.models.RecipeCategory;
 import danieladamzoltan.recipeservice.services.FoodCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,8 +23,8 @@ public class FoodCategoryResource {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<FoodCategory>> getAllFoodCategories(){
-        List<FoodCategory> foodCategories = foodCategoryService.findAllCategories();
+    public ResponseEntity<List<RecipeCategory>> getAllFoodCategories(){
+        List<RecipeCategory> foodCategories = foodCategoryService.findAllCategories();
         return new ResponseEntity<>(foodCategories, HttpStatus.OK);
     }
 

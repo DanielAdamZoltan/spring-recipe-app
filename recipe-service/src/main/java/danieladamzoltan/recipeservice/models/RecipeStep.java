@@ -13,17 +13,22 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "recipe_categories")
-public class FoodCategory implements Serializable {
+@Table(name = "recipe_steps")
+public class RecipeStep implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_id")
+    @Column(name = "id")
     private Long id;
 
+//    @ManyToOne
+//    @JoinColumn(name = "recipe_id", nullable = false)
+//    private Recipe recipe;
 
-    @Column(name = "category_name", length = 16)
-    @OneToOne(mappedBy = "recipe_categories")
-    private Recipe name;
+    @Column(name = "step_number", length = 2)
+    private int stepNumber;
+
+    @Column(name = "step-instructions")
+    private String stepInstructions;
 
 }

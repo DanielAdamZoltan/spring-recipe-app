@@ -6,9 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Data
@@ -16,22 +16,27 @@ import java.util.Set;
 @AllArgsConstructor
 @ToString
 @Table(name = "recipe")
-public class Recipe {
+public class Recipe implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "recipe_id")
-    private Long id;
+    private Long recipeId;
 
     @Column(name = "recipe_title", length = 60, nullable = false)
     private String title;
 
+    @Column(name = "uploader_id")
     private Long uploaderId;
+
+    @Column(name = "image_path")
     private String imagePath;
 
-    @Column(name = "time", length = 4, nullable = false)
+//    1perc - 999perc
+    @Column(name = "time", length = 3, nullable = false)
     private int time;
 
+//    1-12
     @Column(name = "portion", length = 2, nullable = false)
     private int portion;
 
@@ -42,29 +47,56 @@ public class Recipe {
     @Column(name = "price", length = 1, nullable = false)
     private int price;
 
+//  0 -> könnyű
+//  1 -> közepes
+//  2 -> nehéz
     @Column(name = "difficulty", length = 1, nullable = false)
     private int difficulty;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "category_id", referencedColumnName = "id")
-    private FoodCategory categoryId;
+//  from database
+//    @Column(name = "category_id")
+    @OneToOne()
+//    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private RecipeCategory id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cuisine_id", referencedColumnName = "id")
-    private Cuisine cuisineId;
+//  from database
+//    @Column(name = "cuisine_id")
+    @OneToOne()
+//    @JoinColumn(name = "cuisine_id", referencedColumnName = "id")
+    private Cuisine id_;
 
+//  0 -> reggeli
+//  1 -> tízorai
+//  2 -> ebéd
+//  3 -> uzsonna
+//  4 -> vacsora
     @Column(name = "part_of_the_day", length = 1, nullable = false)
     private int partOfTheDay;
 
+//    0 -> tavasz
+//    1 -> nyár
+//    2 -> ősz
+//    3 -> tél
     @Column(name = "season", length = 1, nullable = false)
     private int season;
 
     @Column(name = "recipe_ingredient_id")
+//    @OneToMany(
+//            cascade = CascadeType.ALL,
+//            orphanRemoval = true
+//    )
+//    @JoinColumn(name = "recipe_ingredient_id")
 //    @OneToMany(mappedBy = "recipe")
-    @OneToMany(
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    @JoinColumn(name = "recipe_ingredient_id")
+    @OneToMany
     private List<RecipeIngredient> recipeIngredientId = new ArrayList<>();
+
+    @Column(name = "recipe_step_id")
+//    @OneToMany(
+//            cascade = CascadeType.ALL,
+//            orphanRemoval = true
+//    )
+//    @JoinColumn(name = "recipe_step_id")
+//    @OneToMany(mappedBy = "recipe")
+    @OneToMany
+    private List<RecipeStep> recipeStepId = new ArrayList<>();
 }

@@ -13,14 +13,19 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "ingredients")
-public class Ingredient implements Serializable {
+@Table(name = "recipe_categories")
+public class RecipeCategory implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;
+    private Long id;
 
-    @Column(name = "ingredient_name", length = 50, unique = true)
-    String name;
+//    @OneToOne(mappedBy = "recipe_categories")
+//    @OneToOne
+//    private Recipe recipe;
+
+    @Column(name = "category_name", length = 16)
+    private String name;
+
 }

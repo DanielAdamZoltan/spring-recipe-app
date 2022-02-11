@@ -1,15 +1,14 @@
 package danieladamzoltan.recipeservice.repositories;
 
-import danieladamzoltan.recipeservice.models.FoodCategory;
+import danieladamzoltan.recipeservice.models.RecipeCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.util.Collection;
 import java.util.List;
 
-public interface FoodCategoryRepository extends JpaRepository<FoodCategory, Long> {
+public interface FoodCategoryRepository extends JpaRepository<RecipeCategory, Long> {
 
-    @Query("SELECT name FROM FoodCategory ORDER BY name")
+    @Query("SELECT name FROM RecipeCategory ORDER BY name")
     List<String> getFoodCategoryByName();
 
 
