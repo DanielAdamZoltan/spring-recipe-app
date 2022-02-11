@@ -55,15 +55,15 @@ public class Recipe implements Serializable {
 
 //  from database
 //    @Column(name = "category_id")
-    @OneToOne()
+//    @OneToOne()
 //    @JoinColumn(name = "category_id", referencedColumnName = "id")
-    private RecipeCategory id;
+    private Long id;
 
 //  from database
 //    @Column(name = "cuisine_id")
-    @OneToOne()
+//    @OneToOne()
 //    @JoinColumn(name = "cuisine_id", referencedColumnName = "id")
-    private Cuisine id_;
+    private Long id_;
 
 //  0 -> reggeli
 //  1 -> tízorai
@@ -79,24 +79,28 @@ public class Recipe implements Serializable {
 //    3 -> tél
     @Column(name = "season", length = 1, nullable = false)
     private int season;
-
-    @Column(name = "recipe_ingredient_id")
 //    @OneToMany(
 //            cascade = CascadeType.ALL,
 //            orphanRemoval = true
 //    )
 //    @JoinColumn(name = "recipe_ingredient_id")
 //    @OneToMany(mappedBy = "recipe")
-    @OneToMany
-    private List<RecipeIngredient> recipeIngredientId = new ArrayList<>();
+//    @OneToMany
+//    private List<RecipeIngredient> recipeIngredientId = new ArrayList<>();
 
-    @Column(name = "recipe_step_id")
+    @Column(name = "recipe_ingredient_id ")
+    private Long recipeIngredientId;
+//    private List<RecipeIngredient> recipeIngredientId = new ArrayList<>();
+
+
 //    @OneToMany(
 //            cascade = CascadeType.ALL,
 //            orphanRemoval = true
 //    )
 //    @JoinColumn(name = "recipe_step_id")
 //    @OneToMany(mappedBy = "recipe")
-    @OneToMany
-    private List<RecipeStep> recipeStepId = new ArrayList<>();
+//    @OneToMany
+    @Column(name = "recipe_step_id")
+    private Long recipeStepId;
+//    private List<RecipeStep> recipeStepId = new ArrayList<>();
 }

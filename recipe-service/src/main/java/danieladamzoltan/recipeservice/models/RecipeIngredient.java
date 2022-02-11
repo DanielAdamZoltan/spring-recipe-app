@@ -29,9 +29,9 @@ public class RecipeIngredient implements Serializable {
     private int amount;
 
 //    @Column(name = "ingredient_id")
-    @OneToOne()
+//    @OneToOne()
 //    @JoinColumn(name = "ingredient_id", referencedColumnName = "id")
-    private Ingredient id;
+    private Long id;
 
 
 }
