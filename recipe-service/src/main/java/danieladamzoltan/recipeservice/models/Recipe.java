@@ -20,8 +20,8 @@ public class Recipe implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "recipe_id")
-    private Long recipeId;
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "recipe_title", length = 60, nullable = false)
     private String title;
@@ -57,13 +57,13 @@ public class Recipe implements Serializable {
 //    @Column(name = "category_id")
 //    @OneToOne()
 //    @JoinColumn(name = "category_id", referencedColumnName = "id")
-    private Long id;
+    private Long categoryId;
 
 //  from database
 //    @Column(name = "cuisine_id")
 //    @OneToOne()
 //    @JoinColumn(name = "cuisine_id", referencedColumnName = "id")
-    private Long id_;
+    private Long cuisineId;
 
 //  0 -> reggeli
 //  1 -> tízorai
