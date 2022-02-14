@@ -7,6 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.Optional;
 
 public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
+
+    void deleteIngredientById(Long id);
+
     Optional<Ingredient> findIngredientById(Long id);
 
 //    @Query("SELECT name FROM ingredients WHERE id=?1")

@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b528231-1752-486f-9e68-96ee53f52349" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/RecipeCategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/RecipeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/RecipeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/RecipeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/RecipeIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/RecipeIngredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/imageUploadFtp/FtpTemplateConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/imageUploadFtp/FtpTemplateConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/imageUploadFtp/GatewayConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/imageUploadFtp/GatewayConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/imageUploadFtp/InboundConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/imageUploadFtp/InboundConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/CuisineRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/CuisineRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/FoodCategoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/IngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/IngredientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/CuisineResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/CuisineResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/FoodCategoryResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/FoodCategoryResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/IngredientResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/IngredientResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/CuisineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/CuisineService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/FoodCategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/RecipeCategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,13 +31,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -69,7 +91,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="17" />
-    <property name="last_opened_file_path" value="$USER_HOME$/spring/SpringBootRegistrationApp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SpringWithAngular" />
     <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
@@ -125,6 +147,8 @@
       <workItem from="1644569410746" duration="12723000" />
       <workItem from="1644606801891" duration="4135000" />
       <workItem from="1644681084236" duration="2946000" />
+      <workItem from="1644750997988" duration="68000" />
+      <workItem from="1644868275447" duration="8410000" />
     </task>
     <servers />
   </component>
