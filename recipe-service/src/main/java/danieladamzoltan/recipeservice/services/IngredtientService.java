@@ -35,7 +35,9 @@ public class IngredtientService {
     }
 
 
-    public List<String> findIngredientByName(){ return ingredientRepository.findIngredientByName();}
+    public Ingredient findIngredientByName(String name){ return ingredientRepository.findIngredientByName(name)
+            .orElseThrow(() -> new NotFoundException("Ingredient by Name " + name + "was not found!"));
+    }
 
     public List<Ingredient> findAllIngredient(){ return ingredientRepository.findAll(); }
 

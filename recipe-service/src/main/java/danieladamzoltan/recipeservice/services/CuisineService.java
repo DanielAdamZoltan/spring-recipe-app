@@ -32,7 +32,7 @@ public class CuisineService {
 
     public Cuisine findCuisineById(Long id) {
         return cuisineRepository.findCuisineById(id)
-                .orElseThrow(() -> new NotFoundException("Cuisine by Id " + id + " was not found!"));
+                .orElseThrow(() -> new NotFoundException("Cuisine by ID " + id + " was not found!"));
     }
 
     public void deleteCuisineById(Long id) {
@@ -41,8 +41,8 @@ public class CuisineService {
 
     public List<Cuisine> findAllCuisines(){ return cuisineRepository.findAll(); }
 
-    public List<String> findCuisineByName(String name){ return cuisineRepository.findCuisineByName(name)
-            .orElseThrow(() -> new NotFoundException("Ingredient by ID " + name + "was not found!"));
+    public Cuisine findCuisineByName(String name){ return cuisineRepository.findCuisineByName(name)
+            .orElseThrow(() -> new NotFoundException("Cuisine by Name " + name + "was not found!"));
     }
 
 

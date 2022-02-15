@@ -23,16 +23,15 @@ public class RecipeCategoryService {
 
     public List<RecipeCategory> findAllCategories(){ return recipeCategoryRepository.findAll(); }
 
-    public RecipeCategory addRecipeCategory(RecipeCategory cuisine) {
-//        cuisine.setRecipeCategoryCode(UUID.randomUUID().toString());
-        return recipeCategoryRepository.save(cuisine);
+    public RecipeCategory addRecipeCategory(RecipeCategory recipeCategory) {
+        return recipeCategoryRepository.save(recipeCategory);
     }
 
-    public RecipeCategory updateCuisine(RecipeCategory cuisine) {
-        return recipeCategoryRepository.save(cuisine);
+    public RecipeCategory updateRecipeCategory(RecipeCategory recipeCategory) {
+        return recipeCategoryRepository.save(recipeCategory);
     }
 
-    public RecipeCategory findCuisineById(Long id) {
+    public RecipeCategory findRecipeCategoryById(Long id) {
         return recipeCategoryRepository.findRecipeCategoryById(id)
                 .orElseThrow(() -> new NotFoundException("Recipe Category by Id " + id + " was not found!"));
     }
@@ -42,5 +41,7 @@ public class RecipeCategoryService {
     }
 
 
-    public List<String> getAllRecipeCategoryName(String name){ return recipeCategoryRepository.findRecipeCategoryByName(name);}
+    public RecipeCategory findRecipeCategoryByName(String name){ return recipeCategoryRepository.findRecipeCategoryByName(name)
+            .orElseThrow(() -> new NotFoundException("Recipe Category by Name " + name + " was not found!"));
+    }
 }

@@ -13,5 +13,5 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
     Optional<Recipe> findRecipeById(Long id);
 
     //    @Query("SELECT name FROM Recipe WHERE id=?1")
-    Optional<Recipe> findRecipeByName(String name);
+    Optional<Recipe> findRecipeByTitle(String title);
 }
