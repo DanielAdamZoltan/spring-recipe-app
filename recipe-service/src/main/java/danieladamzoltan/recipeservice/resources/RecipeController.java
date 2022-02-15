@@ -6,6 +6,7 @@ import danieladamzoltan.recipeservice.models.RecipeCategory;
 import danieladamzoltan.recipeservice.services.CuisineService;
 import danieladamzoltan.recipeservice.services.FoodCategoryService;
 import danieladamzoltan.recipeservice.services.IngredtientService;
+import danieladamzoltan.recipeservice.services.RecipeCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,7 @@ import java.util.List;
 public class RecipeController {
 
     private final IngredtientService ingredtientService;
-    private final FoodCategoryService foodCategoryService;
+    private final RecipeCategoryService recipeCategoryService;
     private final CuisineService cuisineService;
 
     @Autowired

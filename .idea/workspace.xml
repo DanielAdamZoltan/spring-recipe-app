@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b528231-1752-486f-9e68-96ee53f52349" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/RecipeCategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/RecipeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/RecipeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/RecipeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/imageUploadFtp/FtpTemplateConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/imageUploadFtp/FtpTemplateConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/imageUploadFtp/GatewayConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/imageUploadFtp/GatewayConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/imageUploadFtp/InboundConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/imageUploadFtp/InboundConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/CuisineRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/CuisineRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/FoodCategoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/IngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/IngredientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/CuisineResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/CuisineResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/FoodCategoryResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/FoodCategoryResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/IngredientResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/IngredientResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/RecipeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/CuisineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/CuisineService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/FoodCategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/RecipeCategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/IngredtientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/IngredtientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,6 +139,8 @@
       <workItem from="1644681084236" duration="2946000" />
       <workItem from="1644750997988" duration="68000" />
       <workItem from="1644868275447" duration="8410000" />
+      <workItem from="1644914938171" duration="464000" />
+      <workItem from="1644931775045" duration="4663000" />
     </task>
     <servers />
   </component>
@@ -165,7 +157,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

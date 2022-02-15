@@ -23,7 +23,6 @@ public class CuisineService {
 
 
     public Cuisine addCuisine(Cuisine cuisine) {
-//        cuisine.setUserCode(UUID.randomUUID().toString());
         return cuisineRepository.save(cuisine);
     }
 
@@ -36,13 +35,15 @@ public class CuisineService {
                 .orElseThrow(() -> new NotFoundException("Cuisine by Id " + id + " was not found!"));
     }
 
-    public void deleteCuisine(Long id) {
+    public void deleteCuisineById(Long id) {
         cuisineRepository.deleteCuisineById(id);
     }
 
     public List<Cuisine> findAllCuisines(){ return cuisineRepository.findAll(); }
 
-    public List<String> getAllCuisinesName(){ return cuisineRepository.getCuisineByName();}
+    public List<String> findCuisineByName(String name){ return cuisineRepository.findCuisineByName(name)
+            .orElseThrow(() -> new NotFoundException("Ingredient by ID " + name + "was not found!"));
+    }
 
 
 }

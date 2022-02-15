@@ -1,6 +1,7 @@
 package danieladamzoltan.recipeservice.repositories;
 
 import danieladamzoltan.recipeservice.models.Cuisine;
+import danieladamzoltan.recipeservice.models.Ingredient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -13,6 +14,8 @@ public interface CuisineRepository extends JpaRepository<Cuisine, Long> {
 
     Optional<Cuisine> findCuisineById(Long id);
 
-    @Query("SELECT name FROM Cuisine ORDER BY name")
-    List<String> getCuisineByName();
+//    @Query("SELECT name FROM Cuisine ORDER BY name")
+//    List<String> findCuisineByName();
+
+    Optional<Cuisine> findCuisineByName(String name);
 }
