@@ -2,7 +2,6 @@ package danieladamzoltan.recipeservice.resources;
 
 import danieladamzoltan.recipeservice.models.*;
 import danieladamzoltan.recipeservice.services.*;
-import danieladamzoltan.recipeservice.services.RecipeCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,7 +35,7 @@ public class RecipeController {
         this.recipeStepService = recipeStepService;
     }
 
-    
+
     //Ingredient
 
     @GetMapping("ingredient/all")
