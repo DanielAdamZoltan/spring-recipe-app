@@ -36,7 +36,7 @@ public class RecipeCategoryService {
                 .orElseThrow(() -> new NotFoundException("Recipe Category by Id " + id + " was not found!"));
     }
 
-    public void deleteRecipeCategory(Long id) {
+    public void deleteRecipeCategoryById(Long id) {
         recipeCategoryRepository.deleteRecipeCategoryById(id);
     }
 

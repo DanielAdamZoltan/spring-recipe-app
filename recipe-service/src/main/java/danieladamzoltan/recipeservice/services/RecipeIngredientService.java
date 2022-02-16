@@ -37,7 +37,7 @@ public class RecipeIngredientService {
                 .orElseThrow(() -> new NotFoundException("Recipe Ingredient by Id " + id + " was not found!"));
     }
 
-    public void deleteRecipeIngredient(Long id) {
+    public void deleteRecipeIngredientById(Long id) {
         recipeIngredientRepository.deleteRecipeIngredientById(id);
     }
 

@@ -35,7 +35,7 @@ public class RecipeStepService {
                 .orElseThrow(() -> new NotFoundException("Recipe Step by Id " + id + " was not found!"));
     }
 
-    public void deleteRecipeStep(Long id) {
+    public void deleteRecipeStepById(Long id) {
         recipeStepRepository.deleteRecipeStepById(id);
     }
 

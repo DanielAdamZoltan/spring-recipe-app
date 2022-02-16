@@ -1,7 +1,6 @@
 package danieladamzoltan.recipeservice.services;
 
 import danieladamzoltan.recipeservice.exception.NotFoundException;
-import danieladamzoltan.recipeservice.models.Cuisine;
 import danieladamzoltan.recipeservice.models.Ingredient;
 import danieladamzoltan.recipeservice.repositories.IngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +11,11 @@ import java.util.List;
 
 @Service
 @Transactional
-public class IngredtientService {
+public class IngredientService {
     private final IngredientRepository ingredientRepository;
 
     @Autowired
-    public IngredtientService(IngredientRepository ingredientRepository) {
+    public IngredientService(IngredientRepository ingredientRepository) {
         this.ingredientRepository = ingredientRepository;
     }
 
