@@ -10,10 +10,10 @@ public class FTPUploadFile {
 
     public void upload(){
 
-        String server = "www.myserver.com";
+        String server = "http://danieladamzoltan.hu";
         int port = 21;
-        String user = "user";
-        String pass = "pass";
+        String user = "DanielAdamZoltan@danieladamzoltan.hu";
+        String pass = "B7aAF3yR86jK2Kx";
 
         FTPClient ftpClient = new FTPClient();
 
