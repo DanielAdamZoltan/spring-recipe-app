@@ -18,15 +18,27 @@ public class CustomUserDetails implements UserDetails {
     private String email;
     @JsonIgnore
     private String password;
+    private String firstName;
+    private String lastName;
     private Boolean active;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public CustomUserDetails(Long id, String email, String password, Boolean active, Collection<? extends GrantedAuthority> authorities) {
+//    public CustomUserDetails(Long id, String email, String password, Boolean active, Collection<? extends GrantedAuthority> authorities) {
+//        this.id = id;
+//        this.email = email;
+//        this.password = password;
+//        this.authorities = authorities;
+//        this.active = active;
+//    }
+
+    public CustomUserDetails(Long id, String email, String password, String firstName, String lastName, Boolean active, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.email = email;
         this.password = password;
-        this.authorities = authorities;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.active = active;
+        this.authorities = authorities;
     }
 
     public static CustomUserDetails build(User user){
@@ -38,6 +50,8 @@ public class CustomUserDetails implements UserDetails {
                 user.getId(),
                 user.getEmail(),
                 user.getPassword(),
+                user.getFirstName(),
+                user.getLastName(),
                 user.isActive(),
                 authorities
         );
@@ -48,8 +62,18 @@ public class CustomUserDetails implements UserDetails {
         return authorities;
     }
 
+
     public Long getId(){
         return id;
+    }
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     @Override
@@ -86,12 +110,28 @@ public class CustomUserDetails implements UserDetails {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CustomUserDetails user = (CustomUserDetails) o;
-        return Objects.equals(id, user.id) && Objects.equals(email, user.email) && Objects.equals(password, user.password) && Objects.equals(active, user.active) && Objects.equals(authorities, user.authorities);
+        CustomUserDetails that = (CustomUserDetails) o;
+        return Objects.equals(id, that.id) && Objects.equals(email, that.email) && Objects.equals(password, that.password) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(active, that.active) && Objects.equals(authorities, that.authorities);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, password, active, authorities);
+        return Objects.hash(id, email, password, firstName, lastName, active, authorities);
     }
+
+    //    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        CustomUserDetails user = (CustomUserDetails) o;
+//        return Objects.equals(id, user.id) && Objects.equals(email, user.email)
+//                && Objects.equals(password, user.password) && Objects.equals(firstName, user.firstName)
+//                && Objects.equals(lastName, user.lastName) && Objects.equals(active, user.active)
+//                && Objects.equals(authorities, user.authorities);
+//    }
+
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, email, password, active, authorities);
+//    }
 }

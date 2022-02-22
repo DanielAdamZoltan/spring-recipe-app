@@ -80,7 +80,7 @@ public class AuthController {
         }
 
         User user = new User(registerRequest.getEmail(),
-                passwordEncoder.encode(registerRequest.getPassword()));
+                passwordEncoder.encode(registerRequest.getPassword()), registerRequest.getFirstName(), registerRequest.getLastName(), registerRequest.getActive());
         Set<String> strRoles = registerRequest.getRole();
         Set<Role> roles = new HashSet<>();
         if (strRoles == null) {
@@ -108,6 +108,7 @@ public class AuthController {
             });
         }
         user.setRoles(roles);
+//        user.setEmail("mukodj@mar.hu");
         userRepository.save(user);
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }

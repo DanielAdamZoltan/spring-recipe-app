@@ -15,11 +15,20 @@ public class RegisterRequest{
     @Email
     private String email;
 
-    private Set<String> role;
-
     @NotBlank
     @Size(min = 8, max = 40)
     private String password;
 
+    @NotBlank
+    @Size(max = 20)
+    private String firstName;
+
+    @NotBlank
+    @Size(max = 20)
+    private String lastName;
+
+    private Boolean active;
+
+    private Set<String> role;
 
 }
