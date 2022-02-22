@@ -11,8 +11,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Role implements Serializable {
-
+public class Role {
+//implements Serializable
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
