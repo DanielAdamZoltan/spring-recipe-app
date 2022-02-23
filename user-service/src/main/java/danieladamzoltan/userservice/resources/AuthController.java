@@ -3,18 +3,22 @@ package danieladamzoltan.userservice.resources;
 import danieladamzoltan.userservice.exception.NotFoundException;
 import danieladamzoltan.userservice.jwt.util.JwtUtil;
 import danieladamzoltan.userservice.models.ERole;
+import danieladamzoltan.userservice.models.EmailConfirmationToken;
 import danieladamzoltan.userservice.models.Role;
 import danieladamzoltan.userservice.models.User;
 import danieladamzoltan.userservice.models.request.LoginRequest;
 import danieladamzoltan.userservice.models.request.RegisterRequest;
 import danieladamzoltan.userservice.models.response.JwtResponse;
 import danieladamzoltan.userservice.models.response.MessageResponse;
+import danieladamzoltan.userservice.repositories.EmailConfirmationTokenRepository;
 import danieladamzoltan.userservice.repositories.RoleRepository;
 import danieladamzoltan.userservice.repositories.UserRepository;
 import danieladamzoltan.userservice.services.CustomUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -40,14 +44,16 @@ public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+    private final EmailConfirmationTokenRepository tokenRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
 
     @Autowired
-    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, JwtUtil jwtUtil) {
+    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository, RoleRepository roleRepository, EmailConfirmationTokenRepository tokenRepository, PasswordEncoder passwordEncoder, JwtUtil jwtUtil) {
         this.authenticationManager = authenticationManager;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
+        this.tokenRepository = tokenRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtUtil = jwtUtil;
     }
@@ -59,7 +65,7 @@ public class AuthController {
         );
         SecurityContextHolder.getContext().setAuthentication(authentication);
         //maybe error cause this line
-        String jwt = jwtUtil.generateToken((UserDetails) authentication);
+        String jwt = jwtUtil.generateToken(authentication);
 
         CustomUserDetails customUserDetails = (CustomUserDetails) authentication.getPrincipal();
         List<String> roles = customUserDetails.getAuthorities().stream()
@@ -108,8 +114,16 @@ public class AuthController {
             });
         }
         user.setRoles(roles);
-//        user.setEmail("mukodj@mar.hu");
         userRepository.save(user);
+        EmailConfirmationToken confirmationToken = new EmailConfirmationToken(user);
+        tokenRepository.save(confirmationToken);
+
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        mailMessage.setTo(user.getEmail());
+        mailMessage.setSubject("Fiók regisztráció megerősítése");
+
+        String fromAddress = "";
+        mailMessage.setFrom(fromAddress);
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
 

@@ -1,9 +1,11 @@
 package danieladamzoltan.userservice.jwt.util;
 
+import danieladamzoltan.userservice.services.CustomUserDetails;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -42,7 +44,13 @@ public class JwtUtil {
         return extractExpiration(token).before(new Date());
     }
 
-    public String generateToken(UserDetails userDetails) {
+//    public String generateToken(UserDetails userDetails) {
+//        Map<String, Object> claims = new HashMap<>();
+//        return createToken(claims, userDetails.getUsername());
+//    }
+
+    public String generateToken(Authentication authentication) {
+        CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
         Map<String, Object> claims = new HashMap<>();
         return createToken(claims, userDetails.getUsername());
     }

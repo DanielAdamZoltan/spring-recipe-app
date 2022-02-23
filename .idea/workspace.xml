@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b528231-1752-486f-9e68-96ee53f52349" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_jakarta_mail_1_6_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_2_6_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/models/EmailConfirmationToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/repositories/EmailConfirmationTokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/EmailSenderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/jwt/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/jwt/util/JwtUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/models/request/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/models/request/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/resources/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/resources/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/CustomUserDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,6 +160,7 @@
       <workItem from="1645478158961" duration="3451000" />
       <workItem from="1645520081061" duration="9828000" />
       <workItem from="1645550973353" duration="10295000" />
+      <workItem from="1645614476060" duration="12295000" />
     </task>
     <servers />
   </component>
@@ -172,7 +177,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

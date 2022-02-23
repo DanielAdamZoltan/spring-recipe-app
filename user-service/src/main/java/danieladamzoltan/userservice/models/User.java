@@ -20,8 +20,6 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
-
-
     @Column(name = "email", nullable = false, unique = true, length = 50)
     private String email;
 
@@ -41,6 +39,7 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
     @Column(name = "active")
+
     private boolean active;
 
 
@@ -49,6 +48,7 @@ public class User {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.active = active;
+        //modified
+        this.active = false;
     }
 }
