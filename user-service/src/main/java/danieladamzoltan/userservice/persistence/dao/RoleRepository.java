@@ -1,7 +1,7 @@
-package danieladamzoltan.userservice.repositories;
+package danieladamzoltan.userservice.persistence.dao;
 
-import danieladamzoltan.userservice.models.ERole;
-import danieladamzoltan.userservice.models.Role;
+import danieladamzoltan.userservice.persistence.models.ERole;
+import danieladamzoltan.userservice.persistence.models.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;

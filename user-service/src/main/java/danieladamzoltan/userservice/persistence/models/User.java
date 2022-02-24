@@ -1,9 +1,8 @@
-package danieladamzoltan.userservice.models;
+package danieladamzoltan.userservice.persistence.models;
 
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,6 +11,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @ToString
+@EqualsAndHashCode
 public class User {
 //    implements Serializable
 
@@ -38,17 +38,22 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    @Column(name = "active")
+    @Column(name = "enabled")
+    private boolean enabled;
 
-    private boolean active;
 
-
-    public User(String email, String password, String firstName, String lastName, boolean active) {
+    public User(String email, String password, String firstName, String lastName) {
+        super();
+        this.enabled=false;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         //modified
-        this.active = false;
     }
+
+//    public User() {
+//        super();
+//        this.enabled=false;
+//    }
 }

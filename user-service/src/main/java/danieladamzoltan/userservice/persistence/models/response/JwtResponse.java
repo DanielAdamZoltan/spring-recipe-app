@@ -1,4 +1,4 @@
-package danieladamzoltan.userservice.models.response;
+package danieladamzoltan.userservice.persistence.models.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

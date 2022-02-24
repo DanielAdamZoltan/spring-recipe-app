@@ -1,9 +1,8 @@
-package danieladamzoltan.userservice.models;
+package danieladamzoltan.userservice.persistence.models;
 
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "role")
@@ -11,6 +10,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@EqualsAndHashCode
 public class Role {
 //implements Serializable
     @Id

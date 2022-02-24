@@ -1,4 +1,4 @@
-package danieladamzoltan.userservice.models.request;
+package danieladamzoltan.userservice.persistence.models.request;
 
 import lombok.Data;
 

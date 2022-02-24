@@ -1,7 +1,7 @@
 package danieladamzoltan.userservice.services;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import danieladamzoltan.userservice.models.User;
+import danieladamzoltan.userservice.persistence.models.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,24 +20,24 @@ public class CustomUserDetails implements UserDetails {
     private String password;
     private String firstName;
     private String lastName;
-    private Boolean active;
+    private Boolean enabled;
     private Collection<? extends GrantedAuthority> authorities;
 
-//    public CustomUserDetails(Long id, String email, String password, Boolean active, Collection<? extends GrantedAuthority> authorities) {
+//    public CustomUserDetails(Long id, String email, String password, Boolean enabled, Collection<? extends GrantedAuthority> authorities) {
 //        this.id = id;
 //        this.email = email;
 //        this.password = password;
 //        this.authorities = authorities;
-//        this.active = active;
+//        this.enabled = enabled;
 //    }
 
-    public CustomUserDetails(Long id, String email, String password, String firstName, String lastName, Boolean active, Collection<? extends GrantedAuthority> authorities) {
+    public CustomUserDetails(Long id, String email, String password, String firstName, String lastName, Boolean enabled, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.active = active;
+        this.enabled = enabled;
         this.authorities = authorities;
     }
 
@@ -52,7 +52,7 @@ public class CustomUserDetails implements UserDetails {
                 user.getPassword(),
                 user.getFirstName(),
                 user.getLastName(),
-                user.isActive(),
+                user.isEnabled(),
                 authorities
         );
     }
@@ -103,7 +103,7 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return active;
+        return enabled;
     }
 
     @Override
@@ -111,12 +111,12 @@ public class CustomUserDetails implements UserDetails {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CustomUserDetails that = (CustomUserDetails) o;
-        return Objects.equals(id, that.id) && Objects.equals(email, that.email) && Objects.equals(password, that.password) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(active, that.active) && Objects.equals(authorities, that.authorities);
+        return Objects.equals(id, that.id) && Objects.equals(email, that.email) && Objects.equals(password, that.password) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(enabled, that.enabled) && Objects.equals(authorities, that.authorities);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, password, firstName, lastName, active, authorities);
+        return Objects.hash(id, email, password, firstName, lastName, enabled, authorities);
     }
 
     //    @Override
@@ -126,12 +126,12 @@ public class CustomUserDetails implements UserDetails {
 //        CustomUserDetails user = (CustomUserDetails) o;
 //        return Objects.equals(id, user.id) && Objects.equals(email, user.email)
 //                && Objects.equals(password, user.password) && Objects.equals(firstName, user.firstName)
-//                && Objects.equals(lastName, user.lastName) && Objects.equals(active, user.active)
+//                && Objects.equals(lastName, user.lastName) && Objects.equals(enabled, user.enabled)
 //                && Objects.equals(authorities, user.authorities);
 //    }
 
 //    @Override
 //    public int hashCode() {
-//        return Objects.hash(id, email, password, active, authorities);
+//        return Objects.hash(id, email, password, enabled, authorities);
 //    }
 }

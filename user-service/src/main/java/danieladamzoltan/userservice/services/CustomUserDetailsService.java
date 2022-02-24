@@ -1,8 +1,8 @@
 package danieladamzoltan.userservice.services;
 
 import danieladamzoltan.userservice.exception.NotFoundException;
-import danieladamzoltan.userservice.models.User;
-import danieladamzoltan.userservice.repositories.UserRepository;
+import danieladamzoltan.userservice.persistence.models.User;
+import danieladamzoltan.userservice.persistence.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

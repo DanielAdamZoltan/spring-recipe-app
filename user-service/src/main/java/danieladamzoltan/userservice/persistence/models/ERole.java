@@ -1,4 +1,4 @@
-package danieladamzoltan.userservice.models;
+package danieladamzoltan.userservice.persistence.models;
 
 public enum ERole {
     ROLE_USER,
