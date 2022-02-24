@@ -23,10 +23,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.net.InetAddress;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+
 
 @Service
 @Transactional
@@ -126,4 +128,6 @@ public class UserService implements IUserService{
     public VerificationToken getVerificationToken(final String VerificationToken) {
         return tokenRepository.findByToken(VerificationToken);
     }
+
+
 }

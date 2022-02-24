@@ -37,6 +37,17 @@ public class AuthController {
         return ResponseEntity.ok(new MessageResponse("You logged in successfully!"));
     }
 
+    // Registration
+//    @PostMapping("/registration")
+//    public ResponseEntity<?> registerUserAccount(@Valid final RegisterRequest registerRequest, final HttpServletRequest request) {
+//
+//
+//        final User user = userService.registerNewUser(registerRequest);
+//        userService.addUserLocation(registered, getClientIP(request));
+//        eventPublisher.publishEvent(new OnRegistrationCompleteEvent(registered, request.getLocale(), getAppUrl(request)));
+//        return new GenericResponse("success");
+//    }
+
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest registerRequest, HttpServletRequest request) {
         try {
