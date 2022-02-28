@@ -5,9 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b528231-1752-486f-9e68-96ee53f52349" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_passay_passay_1_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/exception/InvalidOldPasswordException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/dao/PasswordResetTokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/PasswordResetToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/dto/PasswordDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/validation/PasswordConstraintValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/validation/ValidPassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/messages_english.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/VerificationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/VerificationToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/dto/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/request/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/response/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/dto/JwtResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/response/MessageResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/dto/MessageResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/resources/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/resources/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/CustomUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/IUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/validation/PasswordMatchesValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/validation/PasswordMatchesValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +37,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -78,8 +97,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="17" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reactor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SpringWithAngular" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -155,7 +174,8 @@
       <workItem from="1645550973353" duration="10295000" />
       <workItem from="1645614476060" duration="12295000" />
       <workItem from="1645636688892" duration="16412000" />
-      <workItem from="1645742635484" duration="1253000" />
+      <workItem from="1645742635484" duration="1465000" />
+      <workItem from="1646051471938" duration="19293000" />
     </task>
     <servers />
   </component>

@@ -2,6 +2,7 @@ package danieladamzoltan.userservice.services;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import danieladamzoltan.userservice.persistence.models.User;
+import lombok.EqualsAndHashCode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@EqualsAndHashCode
 public class CustomUserDetails implements UserDetails {
 
     private static final long serialVersionUID = 1L;
@@ -106,18 +108,18 @@ public class CustomUserDetails implements UserDetails {
         return enabled;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CustomUserDetails that = (CustomUserDetails) o;
-        return Objects.equals(id, that.id) && Objects.equals(email, that.email) && Objects.equals(password, that.password) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(enabled, that.enabled) && Objects.equals(authorities, that.authorities);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, email, password, firstName, lastName, enabled, authorities);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        CustomUserDetails that = (CustomUserDetails) o;
+//        return Objects.equals(id, that.id) && Objects.equals(email, that.email) && Objects.equals(password, that.password) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(enabled, that.enabled) && Objects.equals(authorities, that.authorities);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, email, password, firstName, lastName, enabled, authorities);
+//    }
 
     //    @Override
 //    public boolean equals(Object o) {

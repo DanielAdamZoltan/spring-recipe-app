@@ -1,6 +1,6 @@
 package danieladamzoltan.userservice.validation;
 
-import danieladamzoltan.userservice.persistence.models.request.RegisterRequest;
+import danieladamzoltan.userservice.persistence.models.dto.UserDto;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -13,7 +13,7 @@ public class PasswordMatchesValidator
     }
     @Override
     public boolean isValid(Object obj, ConstraintValidatorContext context){
-        RegisterRequest user = (RegisterRequest) obj;
+        UserDto user = (UserDto) obj;
         return user.getPassword().equals(user.getMatchingPassword());
     }
 }

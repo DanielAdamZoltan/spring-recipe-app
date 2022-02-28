@@ -2,6 +2,7 @@ package danieladamzoltan.userservice.persistence.models;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import java.util.Objects;
 
 @Entity
 @Data
+@NoArgsConstructor
 @EqualsAndHashCode
 @ToString
 @Table(name = "verification_token")
@@ -32,13 +34,10 @@ public class VerificationToken {
 
 
 
-    public VerificationToken() {
-        super();
-    }
+
 
     public VerificationToken(final String token) {
         super();
-
         this.token = token;
         this.expiryDate = calculateExpiryDate(EXPIRATION);
     }
@@ -56,6 +55,11 @@ public class VerificationToken {
         cal.setTime(new Timestamp(cal.getTime().getTime()));
         cal.add(Calendar.MINUTE, expiryTimeInMinutes);
         return new Date(cal.getTime().getTime());
+    }
+
+    public void updateToken(final String token) {
+        this.token = token;
+        this.expiryDate = calculateExpiryDate(EXPIRATION);
     }
 
 }
