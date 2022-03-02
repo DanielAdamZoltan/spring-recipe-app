@@ -5,28 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b528231-1752-486f-9e68-96ee53f52349" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_passay_passay_1_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/exception/InvalidOldPasswordException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/dao/PasswordResetTokenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/PasswordResetToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/dto/PasswordDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/validation/PasswordConstraintValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/validation/ValidPassword.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/messages_english.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/exception/UserAlreadyExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/VerificationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/VerificationToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/dto/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/request/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/response/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/dto/JwtResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/response/MessageResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/dto/MessageResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/exception/InvalidOldPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/exception/InvalidOldPasswordException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/exception/NotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/exception/NotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/resources/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/resources/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/CustomUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/validation/PasswordMatchesValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/validation/PasswordMatchesValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/messages_english.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/messages_english.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +82,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="17" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SpringWithAngular" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../spring/SpringWithAngular" />
     <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="ReactorSettings">
@@ -176,6 +161,7 @@
       <workItem from="1645636688892" duration="16412000" />
       <workItem from="1645742635484" duration="1465000" />
       <workItem from="1646051471938" duration="19293000" />
+      <workItem from="1646232470447" duration="6124000" />
     </task>
     <servers />
   </component>
@@ -192,7 +178,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.MessageSource;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -44,34 +45,30 @@ public class AuthController {
         this.messageSource = messageSource;
     }
 
+//    Authenticate the User
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
         userService.authenticateUser(loginRequest);
-        return ResponseEntity.ok(new MessageResponse("You logged in successfully!"));
+        new MessageResponse("You logged in successfully!");
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    // Registration
-//    @PostMapping("/registration")
-//    public ResponseEntity<?> registerUserAccount(@Valid final userDto userDto, final HttpServletRequest request) {
-//
-//
-//        final User user = userService.registerNewUser(userDto);
-//        userService.addUserLocation(registered, getClientIP(request));
-//        eventPublisher.publishEvent(new OnRegistrationCompleteEvent(registered, request.getLocale(), getAppUrl(request)));
-//        return new GenericResponse("success");
-//    }
-
+//    Register the User
     @PostMapping("admin/register")
-    public ResponseEntity<?> registerUserAdmin(@Valid @RequestBody UserDto userDto,
-                                          HttpServletRequest request) {
+//  @RequestBody
+    public ResponseEntity<?> registerUserAdmin(@Valid final UserDto userDto,
+                                            final HttpServletRequest request) {
         try {
             User user = userService.registerNewUser(userDto);
             String appUrl = request.getContextPath();
             applicationEventPublisher.publishEvent(new RegistrationEvent(user,
                     request.getLocale(), appUrl));
-            return ResponseEntity.ok(new MessageResponse("We've sent you a link to sign up via email."));
+            new MessageResponse("We've sent you a link to sign up via email.");
+            return new ResponseEntity<>(HttpStatus.CREATED);
+
         }catch (Exception exception ){
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
+            new MessageResponse("Error: Email is already in use!");
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
     }
 
@@ -95,7 +92,7 @@ public class AuthController {
         final VerificationToken verificationToken = userService.generateNewVerificationToken(existingToken);
         final User user = userService.getUser(verificationToken.getToken());
         javaMailSender.send(constructResendVerificationTokenEmail(getAppUrl(request), request.getLocale(), verificationToken, user));
-        return new GenericResponse(messageSource.getMessage("message.resendToken", null, request.getLocale()));
+        return new ResponseEntity<>(messageSource.getMessage("message.resendToken", null, request.getLocale()), HttpStatus.OK);
     }
 
     // Reset password
@@ -107,7 +104,7 @@ public class AuthController {
             userService.createPasswordResetTokenForUser(user, token);
             javaMailSender.send(constructResetTokenEmail(getAppUrl(request), request.getLocale(), token, user));
         }
-        return new GenericResponse(messageSource.getMessage("message.resetPasswordEmail", null, request.getLocale()));
+        return new ResponseEntity<>(messageSource.getMessage("message.resetPasswordEmail", null, request.getLocale()), HttpStatus.OK);
     }
 
     // Save password
@@ -117,16 +114,16 @@ public class AuthController {
         final String result = userService.validatePasswordResetToken(passwordDto.getToken());
 
         if(result != null) {
-            return new GenericResponse(messageSource.getMessage("auth.message." + result, null, locale));
+            return new ResponseEntity<>(messageSource.getMessage("auth.message." + result, null, locale), HttpStatus.OK);
         }
 
         Optional<User> user = userService.getUserByPasswordResetToken(passwordDto.getToken());
         if(user.isPresent()) {
             userService.changeUserPassword(user.get(), passwordDto.getNewPassword());
 
-            return new GenericResponse(messageSource.getMessage("message.resetPasswordSuc", null, locale));
+            return new ResponseEntity<>(messageSource.getMessage("message.resetPasswordSuc", null, locale), HttpStatus.OK);
         } else {
-            return new GenericResponse(messageSource.getMessage("auth.message.invalid", null, locale));
+            return new ResponseEntity<>(messageSource.getMessage("auth.message.invalid", null, locale), HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -138,7 +135,7 @@ public class AuthController {
             throw new InvalidOldPasswordException(messageSource.getMessage("message.invalidOldPassword", null, locale));
         }
         userService.changeUserPassword(user, passwordDto.getNewPassword());
-        return new GenericResponse(messageSource.getMessage("message.updatePasswordSuc", null, locale));
+        return new ResponseEntity<>(messageSource.getMessage("message.updatePasswordSuc", null, locale));
     }
 
     @GetMapping("/registration-confirm")
