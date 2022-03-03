@@ -57,8 +57,8 @@ public class AuthController {
 
 //    Register the User
     @PostMapping("admin/register")
-//  @RequestBody
-    public ResponseEntity<?> registerUserAdmin(@Valid final UserDto userDto,
+//
+    public ResponseEntity<?> registerUserAdmin(@Valid @RequestBody final UserDto userDto,
                                             final HttpServletRequest request) {
         try {
             User user = userService.registerNewUser(userDto);
