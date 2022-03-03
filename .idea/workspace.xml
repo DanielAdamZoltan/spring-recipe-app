@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b528231-1752-486f-9e68-96ee53f52349" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/exception/UserAlreadyExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/exception/InvalidOldPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/exception/InvalidOldPasswordException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/exception/NotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/exception/NotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/dao/PasswordResetTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/dao/PasswordResetTokenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/dao/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/dao/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/dao/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/dao/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/dao/VerificationTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/dao/VerificationTokenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/persistence/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/resources/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/danieladamzoltan/userservice/resources/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/messages_english.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/messages_english.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +163,8 @@
       <workItem from="1645636688892" duration="16412000" />
       <workItem from="1645742635484" duration="1465000" />
       <workItem from="1646051471938" duration="19293000" />
-      <workItem from="1646232470447" duration="6124000" />
+      <workItem from="1646232470447" duration="6257000" />
+      <workItem from="1646318074193" duration="6659000" />
     </task>
     <servers />
   </component>

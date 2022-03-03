@@ -1,6 +1,7 @@
 package danieladamzoltan.userservice.resources;
 
 import danieladamzoltan.userservice.exception.InvalidOldPasswordException;
+import danieladamzoltan.userservice.exception.UserAlreadyExistException;
 import danieladamzoltan.userservice.persistence.models.User;
 import danieladamzoltan.userservice.persistence.models.VerificationToken;
 import danieladamzoltan.userservice.persistence.models.dto.LoginRequest;
@@ -49,7 +50,8 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
         userService.authenticateUser(loginRequest);
-        new MessageResponse("You logged in successfully!");
+//        messageSource.getMessage("message.successfullyLoggedIn", null, request.getLocale()),
+        System.out.println(messageSource.getMessage("message.successfullyLoggedIn", null, null));
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -60,14 +62,13 @@ public class AuthController {
                                             final HttpServletRequest request) {
         try {
             User user = userService.registerNewUser(userDto);
-            String appUrl = request.getContextPath();
             applicationEventPublisher.publishEvent(new RegistrationEvent(user,
-                    request.getLocale(), appUrl));
-            new MessageResponse("We've sent you a link to sign up via email.");
+                    request.getLocale(), getAppUrl(request)));
+            System.out.println(messageSource.getMessage("message.registration", null, request.getLocale()));
             return new ResponseEntity<>(HttpStatus.CREATED);
 
-        }catch (Exception exception ){
-            new MessageResponse("Error: Email is already in use!");
+        }catch (UserAlreadyExistException userAlreadyExistException){
+            System.out.println(messageSource.getMessage("message.emailAlreadyInUse", null, request.getLocale()) + "Error: " + userAlreadyExistException);
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
     }
@@ -92,7 +93,8 @@ public class AuthController {
         final VerificationToken verificationToken = userService.generateNewVerificationToken(existingToken);
         final User user = userService.getUser(verificationToken.getToken());
         javaMailSender.send(constructResendVerificationTokenEmail(getAppUrl(request), request.getLocale(), verificationToken, user));
-        return new ResponseEntity<>(messageSource.getMessage("message.resendToken", null, request.getLocale()), HttpStatus.OK);
+        System.out.println(messageSource.getMessage("message.resendToken", null, request.getLocale()));
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     // Reset password
@@ -104,7 +106,8 @@ public class AuthController {
             userService.createPasswordResetTokenForUser(user, token);
             javaMailSender.send(constructResetTokenEmail(getAppUrl(request), request.getLocale(), token, user));
         }
-        return new ResponseEntity<>(messageSource.getMessage("message.resetPasswordEmail", null, request.getLocale()), HttpStatus.OK);
+        System.out.println(messageSource.getMessage("message.resetPasswordEmail", null, request.getLocale()));
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     // Save password
@@ -114,14 +117,15 @@ public class AuthController {
         final String result = userService.validatePasswordResetToken(passwordDto.getToken());
 
         if(result != null) {
-            return new ResponseEntity<>(messageSource.getMessage("auth.message." + result, null, locale), HttpStatus.OK);
+            System.out.println(messageSource.getMessage("auth.message." + result, null, locale));
+            return new ResponseEntity<>(HttpStatus.OK);
         }
 
         Optional<User> user = userService.getUserByPasswordResetToken(passwordDto.getToken());
         if(user.isPresent()) {
             userService.changeUserPassword(user.get(), passwordDto.getNewPassword());
-
-            return new ResponseEntity<>(messageSource.getMessage("message.resetPasswordSuc", null, locale), HttpStatus.OK);
+            System.out.println(messageSource.getMessage("message.resetPasswordSuc", null, locale));
+            return new ResponseEntity<>(HttpStatus.OK);
         } else {
             return new ResponseEntity<>(messageSource.getMessage("auth.message.invalid", null, locale), HttpStatus.BAD_REQUEST);
         }
@@ -135,15 +139,18 @@ public class AuthController {
             throw new InvalidOldPasswordException(messageSource.getMessage("message.invalidOldPassword", null, locale));
         }
         userService.changeUserPassword(user, passwordDto.getNewPassword());
-        return new ResponseEntity<>(messageSource.getMessage("message.updatePasswordSuc", null, locale));
+        System.out.println(messageSource.getMessage("message.updatePasswordSuccess", null, locale));
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
+//    Verificate the Registration token
     @GetMapping("/registration-confirm")
-    public ResponseEntity<Void> confirmRegistration(@RequestParam("token") String token) {
+    public ResponseEntity<?> confirmRegistration(@RequestParam("token") String token) {
         VerificationToken verificationToken = userService.getVerificationToken(token);
         if (verificationToken == null) {
             //maybe redirect
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: Invalid Token!"));
+            System.out.println(messageSource.getMessage("auth.message.invalidToken", null, null));
+            return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
         }
 
         User user = verificationToken.getUser();
@@ -151,39 +158,18 @@ public class AuthController {
         if ((verificationToken.getExpiryDate().getTime() - cal.getTime().getTime()) <= 0) {
 
             //maybe redirect
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: The token is expired!"));
+            System.out.println(messageSource.getMessage("auth.message.expired", null, null));
+            return new ResponseEntity<>(HttpStatus.GONE);
         }
         else {
             user.setEnabled(true);
             userService.saveRegisteredUser(user);
-            return ResponseEntity.ok(new MessageResponse("User registered successfully!")) && new ResponseEntity<>();
+            System.out.println(messageSource.getMessage("message.regSuccessConfirmed", null, null));
+            return new ResponseEntity<>(HttpStatus.OK);
 
         }
     }
 
-
-//    @GetMapping("/registration-confirm")
-//    public String confirmRegistration(@RequestParam("token") String token) {
-//        VerificationToken verificationToken = userService.getVerificationToken(token);
-//        if (verificationToken == null) {
-//            //maybe redirect
-//            return "Error: Invalid Token!";
-//        }
-//
-//        User user = verificationToken.getUser();
-//        Calendar cal = Calendar.getInstance();
-//        if ((verificationToken.getExpiryDate().getTime() - cal.getTime().getTime()) <= 0) {
-//
-//            //maybe redirect
-//            return "Error: The token is expired!";
-//        }
-//        else {
-//            user.setEnabled(true);
-//            userService.saveRegisteredUser(user);
-//            return ResponseEntity.ok(new MessageResponse("User registered successfully!")) && new ResponseEntity<>();
-//
-//        }
-//    }
 
 //    non api
 
