@@ -98,7 +98,6 @@ public class UserService implements IUserService{
                 new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword())
         );
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        //maybe error cause this line
         String jwt = jwtUtil.generateToken(authentication);
 
         CustomUserDetails customUserDetails = (CustomUserDetails) authentication.getPrincipal();

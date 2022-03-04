@@ -88,7 +88,7 @@ public class AuthController {
 //    }
 
     // User activation - verification
-    @GetMapping("/user/resendRegistrationToken")
+    @GetMapping("/user/resend-registration-token")
     public ResponseEntity<?> resendRegistrationToken(final HttpServletRequest request, @RequestParam("token") final String existingToken) {
         final VerificationToken verificationToken = userService.generateNewVerificationToken(existingToken);
         final User user = userService.getUser(verificationToken.getToken());
@@ -98,7 +98,7 @@ public class AuthController {
     }
 
     // Reset password
-    @PostMapping("/user/resetPassword")
+    @PostMapping("/user/reset-password")
     public ResponseEntity<?> resetPassword(final HttpServletRequest request, @RequestParam("email") final String userEmail) {
         final User user = userService.findUserByEmail(userEmail);
         if (user != null) {
@@ -111,7 +111,7 @@ public class AuthController {
     }
 
     // Save password
-    @PostMapping("/user/savePassword")
+    @PostMapping("/user/save-password")
     public ResponseEntity<?> savePassword(final Locale locale, @Valid PasswordDto passwordDto) {
 
         final String result = userService.validatePasswordResetToken(passwordDto.getToken());
@@ -132,7 +132,7 @@ public class AuthController {
     }
 
     // Change user password
-    @PostMapping("/user/updatePassword")
+    @PutMapping("/user/update-password")
     public ResponseEntity<?> changeUserPassword(final Locale locale, @Valid PasswordDto passwordDto) {
         final User user = userService.findUserByEmail(((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getEmail());
         if (!userService.checkIfValidOldPassword(user, passwordDto.getOldPassword())) {
@@ -169,6 +169,13 @@ public class AuthController {
 
         }
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable("id") Long id) {
+        userService.deleteUser(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 
 
 //    non api
