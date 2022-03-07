@@ -11,7 +11,9 @@ import java.util.Optional;
 
 public interface IUserService {
 
-    User registerNewUser(UserDto registerRequest);
+    User registerNewUserAdmin(UserDto userDto);
+
+    User registerNewUser(UserDto userDto);
 
     JwtResponse authenticateUser(LoginRequest loginRequest);
 
@@ -22,6 +24,8 @@ public interface IUserService {
     VerificationToken getVerificationToken(String VerificationToken);
 
     void deleteUser(User user);
+
+    void deleteUser(Long id, User user);
 
     User getUser(String verificationToken);
 

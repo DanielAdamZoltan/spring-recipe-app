@@ -57,7 +57,7 @@ public class UserService implements IUserService{
 
 
     @Override
-    public User registerNewUser(UserDto userDto) {
+    public User registerNewUserAdmin(UserDto userDto) {
 
         User user = new User(userDto.getEmail(),
                 passwordEncoder.encode(userDto.getPassword()), userDto.getFirstName(), userDto.getLastName());
@@ -88,6 +88,19 @@ public class UserService implements IUserService{
                 }
             });
         }
+        user.setRoles(roles);
+        return userRepository.save(user);
+    }
+
+    @Override
+    public User registerNewUser(UserDto userDto) {
+        User user = new User(userDto.getEmail(),
+                passwordEncoder.encode(userDto.getPassword()), userDto.getFirstName(), userDto.getLastName());
+        Set<Role> roles = new HashSet<>();
+        Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+                .orElseThrow(() -> new NotFoundException("Error: role is not found!"));
+        Role userRole1 = roleRepository.getById(1L);
+        roles.add(userRole1);
         user.setRoles(roles);
         return userRepository.save(user);
     }
@@ -247,6 +260,24 @@ public class UserService implements IUserService{
         }
 
         userRepository.delete(user);
+    }
+
+    @Override
+    public void deleteUser(final Long id, final User user) {
+        final VerificationToken verificationToken = tokenRepository.findByUser(user);
+
+        if (verificationToken != null) {
+            tokenRepository.delete(verificationToken);
+        }
+
+        final PasswordResetToken passwordResetToken = passwordResetTokenRepository.findByUser(user);
+
+        if (passwordResetToken != null) {
+            passwordResetTokenRepository.delete(passwordResetToken);
+        }
+
+        userRepository.deleteUserById(id);
+
     }
 
 

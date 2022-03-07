@@ -55,11 +55,27 @@ public class AuthController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-//    Register the User
+//    Register the Admin and other roles
     @PostMapping("admin/register")
 //
     public ResponseEntity<?> registerUserAdmin(@Valid @RequestBody final UserDto userDto,
                                             final HttpServletRequest request) {
+        try {
+            User user = userService.registerNewUserAdmin(userDto);
+            applicationEventPublisher.publishEvent(new RegistrationEvent(user,
+                    request.getLocale(), getAppUrl(request)));
+            System.out.println(messageSource.getMessage("message.registration", null, request.getLocale()));
+            return new ResponseEntity<>(HttpStatus.CREATED);
+
+        }catch (UserAlreadyExistException userAlreadyExistException){
+            System.out.println(messageSource.getMessage("message.emailAlreadyInUse", null, request.getLocale()) + "Error: " + userAlreadyExistException);
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        }
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<?> registerUser(@Valid @RequestBody final UserDto userDto,
+                                          HttpServletRequest request) {
         try {
             User user = userService.registerNewUser(userDto);
             applicationEventPublisher.publishEvent(new RegistrationEvent(user,
@@ -72,20 +88,6 @@ public class AuthController {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
     }
-
-//    @PostMapping("/register")
-//    public ResponseEntity<?> registerUser(@Valid @RequestBody userDto userDto,
-//                                          HttpServletRequest request) {
-//        try {
-//            User user = userService.registerNewUser(userDto);
-//            String appUrl = request.getContextPath();
-//            applicationEventPublisher.publishEvent(new RegistrationEvent(user,
-//                    request.getLocale(), appUrl));
-//            return ResponseEntity.ok(new MessageResponse("We've sent you a link to sign up via email."));
-//        }catch (Exception exception ){
-//            return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
-//        }
-//    }
 
     // User activation - verification
     @GetMapping("/user/resend-registration-token")
@@ -170,11 +172,17 @@ public class AuthController {
         }
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable("id") Long id) {
-        userService.deleteUser(id);
+    @DeleteMapping("/admin/delete/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable("id") Long id, User user) {
+        userService.deleteUser(id, user);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+//    @DeleteMapping("/admin/delete/{id}")
+//    public ResponseEntity<?> deleteUser(@RequestBody User user) {
+//        userService.deleteUser(user);
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
 
 
