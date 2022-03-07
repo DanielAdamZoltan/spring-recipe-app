@@ -48,4 +48,6 @@ public interface IUserService {
     boolean checkIfValidOldPassword(User user, String oldPassword);
 
     String validateVerificationToken(String token);
+
+    boolean emailExists(String email);
 }

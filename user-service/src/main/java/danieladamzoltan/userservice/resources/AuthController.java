@@ -56,21 +56,30 @@ public class AuthController {
     }
 
 //    Register the Admin and other roles
-    @PostMapping("admin/register")
+    @PostMapping("/admin/register")
 //
     public ResponseEntity<?> registerUserAdmin(@Valid @RequestBody final UserDto userDto,
                                             final HttpServletRequest request) {
-        try {
+//        try {
+        User emailEntry = userService.findUserByEmail(userDto.getEmail());
+        if (emailEntry.isEnabled()) {
             User user = userService.registerNewUserAdmin(userDto);
             applicationEventPublisher.publishEvent(new RegistrationEvent(user,
                     request.getLocale(), getAppUrl(request)));
-            System.out.println(messageSource.getMessage("message.registration", null, request.getLocale()));
+//                System.out.println(messageSource.getMessage("message.registration", null, request.getLocale()));
+            System.out.println("We've sent you a link to sign up via email.");
             return new ResponseEntity<>(HttpStatus.CREATED);
 
-        }catch (UserAlreadyExistException userAlreadyExistException){
-            System.out.println(messageSource.getMessage("message.emailAlreadyInUse", null, request.getLocale()) + "Error: " + userAlreadyExistException);
+        } else {
+            //System.out.println(messageSource.getMessage("message.emailAlreadyInUse", null, request.getLocale()));
+            System.out.println("Error: Email is already in use!");
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
+
+
+//        }catch (UserAlreadyExistException userAlreadyExistException){
+//
+//        }
     }
 
     @PostMapping("/register")

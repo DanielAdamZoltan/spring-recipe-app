@@ -146,7 +146,8 @@ public class UserService implements IUserService{
                 .orElseThrow(() -> new NotFoundException("Error: User by Email: " + email + " is not found!"));
     }
 
-    private boolean emailExists(final String email) {
+    @Override
+    public boolean emailExists(final String email) {
         return userRepository.findByEmail(email) != null;
     }
 
