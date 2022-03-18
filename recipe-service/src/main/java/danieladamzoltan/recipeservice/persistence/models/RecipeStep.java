@@ -1,4 +1,4 @@
-package danieladamzoltan.recipeservice.models;
+package danieladamzoltan.recipeservice.persistence.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,24 +13,22 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "recipe_ingredients")
-public class RecipeIngredient implements Serializable {
+@Table(name = "recipe_step")
+public class RecipeStep implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
 //    @ManyToOne
 //    @JoinColumn(name = "recipe_id", nullable = false)
 //    private Recipe recipe;
 
-    @Column(name = "amount", length = 4, nullable = false)
-    private int amount;
+    @Column(name = "step_number", length = 2)
+    private int stepNumber;
 
-//    @OneToOne()
-//    @JoinColumn(name = "ingredient_id", referencedColumnName = "id")
-    @Column(name = "ingredient_id")
-    private Long ingredientId;
-
+    @Column(name = "step_instructions")
+    private String stepInstructions;
 
 }

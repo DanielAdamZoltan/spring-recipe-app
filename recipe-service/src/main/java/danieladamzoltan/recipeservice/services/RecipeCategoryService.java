@@ -1,9 +1,8 @@
 package danieladamzoltan.recipeservice.services;
 
 import danieladamzoltan.recipeservice.exception.NotFoundException;
-import danieladamzoltan.recipeservice.models.Cuisine;
-import danieladamzoltan.recipeservice.models.RecipeCategory;
-import danieladamzoltan.recipeservice.repositories.RecipeCategoryRepository;
+import danieladamzoltan.recipeservice.persistence.models.RecipeCategory;
+import danieladamzoltan.recipeservice.persistence.dao.RecipeCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,14 +1,13 @@
 package danieladamzoltan.recipeservice.services;
 
 import danieladamzoltan.recipeservice.exception.NotFoundException;
-import danieladamzoltan.recipeservice.models.Cuisine;
-import danieladamzoltan.recipeservice.repositories.CuisineRepository;
+import danieladamzoltan.recipeservice.persistence.models.Cuisine;
+import danieladamzoltan.recipeservice.persistence.dao.CuisineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @Transactional

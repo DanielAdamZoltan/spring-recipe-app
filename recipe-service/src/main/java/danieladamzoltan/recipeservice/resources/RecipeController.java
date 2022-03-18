@@ -1,6 +1,6 @@
 package danieladamzoltan.recipeservice.resources;
 
-import danieladamzoltan.recipeservice.models.*;
+import danieladamzoltan.recipeservice.persistence.models.*;
 import danieladamzoltan.recipeservice.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

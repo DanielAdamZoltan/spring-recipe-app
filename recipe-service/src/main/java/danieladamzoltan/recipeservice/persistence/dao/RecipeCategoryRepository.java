@@ -1,7 +1,6 @@
-package danieladamzoltan.recipeservice.repositories;
+package danieladamzoltan.recipeservice.persistence.dao;
 
-import danieladamzoltan.recipeservice.models.Ingredient;
-import danieladamzoltan.recipeservice.models.RecipeCategory;
+import danieladamzoltan.recipeservice.persistence.models.RecipeCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

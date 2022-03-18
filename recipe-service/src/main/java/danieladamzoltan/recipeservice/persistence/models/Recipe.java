@@ -1,4 +1,4 @@
-package danieladamzoltan.recipeservice.models;
+package danieladamzoltan.recipeservice.persistence.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,15 +7,13 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "recipe")
+@Table(name="recipe")
 public class Recipe implements Serializable {
 
     @Id
@@ -23,7 +21,7 @@ public class Recipe implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "recipe_title", length = 60, nullable = false)
+    @Column(name = "title", length = 60, nullable = false)
     private String title;
 
     @Column(name = "uploader_id")
@@ -54,15 +52,15 @@ public class Recipe implements Serializable {
     private int difficulty;
 
 //  from database
-//    @Column(name = "category_id")
 //    @OneToOne()
 //    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    @Column(name = "category_id")
     private Long categoryId;
 
 //  from database
-//    @Column(name = "cuisine_id")
 //    @OneToOne()
 //    @JoinColumn(name = "cuisine_id", referencedColumnName = "id")
+    @Column(name = "cuisine_id")
     private Long cuisineId;
 
 //  0 -> reggeli
