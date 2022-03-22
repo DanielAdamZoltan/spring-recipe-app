@@ -23,7 +23,7 @@ public class RecipeIngredient implements Serializable {
 //    @ManyToOne
 //    @JoinColumn(name = "recipe_id", nullable = false)
 //    private Recipe recipe;
-
+//    hiba
     @Column(name = "amount", length = 4, nullable = false)
     private int amount;
 

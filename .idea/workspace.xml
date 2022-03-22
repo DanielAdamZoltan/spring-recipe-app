@@ -5,27 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b528231-1752-486f-9e68-96ee53f52349" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_liquibase_liquibase_core_4_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/resources/db/changelog/CUISINE/cuisine_insert_data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/resources/db/changelog/INGREDIENT/ingredient_insert_data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/resources/db/changelog/RECIPE_CATEGORY/recipe_category_insert_data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/Cuisine.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Cuisine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/RecipeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/RecipeIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeIngredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/models/RecipeStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/CuisineRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/dao/CuisineRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/IngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/dao/IngredientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/RecipeCategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/dao/RecipeCategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/RecipeIngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/dao/RecipeIngredientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/RecipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/dao/RecipeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/repositories/RecipeStepRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/dao/RecipeStepRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/resources/RecipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/CuisineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/CuisineService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/IngredientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/RecipeCategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/RecipeCategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/RecipeIngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/RecipeIngredientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/RecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/RecipeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/RecipeStepService.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/services/RecipeStepService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Recipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeIngredient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +173,8 @@
       <workItem from="1646643607125" duration="9055000" />
       <workItem from="1646728777689" duration="594000" />
       <workItem from="1647609040684" duration="6501000" />
-      <workItem from="1647616201555" duration="2767000" />
+      <workItem from="1647616201555" duration="2789000" />
+      <workItem from="1647940924857" duration="9255000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - include:
+      file: INGREDIENT/ingredient_insert_data.sql
+      relativeToChangelogFile: true
+
+  - include:
+      file: CUISINE/cuisine_insert_data.sql
+      relativeToChangelogFile: true
+
+  - include:
+      file: RECIPE_CATEGORY/recipe_category_insert_data.sql
+      relativeToChangelogFile: true
