@@ -21,6 +21,6 @@ public class Ingredient implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name", length = 50, unique = true)
+    @Column(name = "name", length = 50, unique = true, nullable = false)
     private String name;
 }

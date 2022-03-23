@@ -26,7 +26,8 @@ public class UserDto {
     @Size(max = 20)
     private String firstName;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     @Size(max = 20)
     private String lastName;
 

@@ -25,7 +25,7 @@ public class RecipeCategory implements Serializable {
 //    @OneToOne
 //    private Recipe recipe;
 
-    @Column(name = "name", length = 16)
+    @Column(name = "name", length = 16, unique = true, nullable = false)
     private String name;
 
 }

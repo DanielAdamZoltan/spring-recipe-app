@@ -25,7 +25,8 @@ public class RecipeStep implements Serializable {
 //    @JoinColumn(name = "recipe_id", nullable = false)
 //    private Recipe recipe;
 
-    @Column(name = "step_number", length = 2)
+    // lenght = 2
+    @Column(name = "step_number")
     private int stepNumber;
 
     @Column(name = "step_instructions")

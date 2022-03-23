@@ -24,6 +24,6 @@ public class Cuisine implements Serializable {
 //    @OneToOne
 //    private Recipe recipe;
 
-    @Column(name = "name", length = 12)
+    @Column(name = "name", length = 12, nullable = false)
     private String name;
 }

@@ -102,6 +102,7 @@ public class UserService implements IUserService{
         Role userRole1 = roleRepository.getById(1L);
         roles.add(userRole1);
         user.setRoles(roles);
+        user.setEnabled(false);
         return userRepository.save(user);
     }
 
@@ -263,6 +264,7 @@ public class UserService implements IUserService{
         userRepository.delete(user);
     }
 
+    //maybe useless
     @Override
     public void deleteUser(final Long id, final User user) {
         final VerificationToken verificationToken = tokenRepository.findByUser(user);
