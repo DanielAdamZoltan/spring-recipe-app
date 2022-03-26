@@ -17,13 +17,13 @@ import java.io.Serializable;
 public class Cuisine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+//    @Column(name = "id")
     private Long id;
 
 //    @OneToOne(mappedBy = "cuisines")
 //    @OneToOne
 //    private Recipe recipe;
 
-    @Column(name = "name", length = 12, nullable = false)
+    @Column(name = "name", length = 12, nullable = false, unique = true)
     private String name;
 }

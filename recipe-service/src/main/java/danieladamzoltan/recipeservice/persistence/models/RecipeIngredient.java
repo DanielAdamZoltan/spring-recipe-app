@@ -25,7 +25,7 @@ public class RecipeIngredient implements Serializable {
 //    private Recipe recipe;
 //    hiba
     // lenght = 4
-    @Column(name = "amount")
+    @Column(name = "amount", length = 4, nullable = false)
     private int amount;
 
 //    @OneToOne()

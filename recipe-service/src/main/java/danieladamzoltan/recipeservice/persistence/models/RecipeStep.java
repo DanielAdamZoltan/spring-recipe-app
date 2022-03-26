@@ -26,10 +26,10 @@ public class RecipeStep implements Serializable {
 //    private Recipe recipe;
 
     // lenght = 2
-    @Column(name = "step_number")
+    @Column(name = "step_number", length = 2, nullable = false)
     private int stepNumber;
 
-    @Column(name = "step_instructions")
+    @Column(name = "step_instructions", nullable = false)
     private String stepInstructions;
 
 }

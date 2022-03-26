@@ -18,38 +18,38 @@ public class Recipe implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+//    @Column(name = "id")
     private Long id;
 
-    @Column(name = "title", length = 60, nullable = false)
+    @Column(name = "title", length = 60, nullable = false, unique = true)
     private String title;
 
-    @Column(name = "user_id")
+    @Column(name = "user_id", nullable = false)
     private Long userId;
 //
-    @Column(name = "image_path")
+    @Column(name = "image_path", nullable = false)
     private String imagePath;
 
 //    1perc - 999perc
-    @Column(name = "time")
+    @Column(name = "time", length = 3, nullable = false)
     private int time;
 
 //    1-12
-    @Column(name = "dose")
+    @Column(name = "dose", length = 2, nullable = false)
     private int dose;
 
-//  0 -> nagyon olcsó
-//  1 -> olcsó
-//  2 -> megfizethető
-//  3 -> drága
-    @Column(name = "price")
-    private int price;
+//  n -> nagyon olcsó
+//  o -> olcsó
+//  m -> megfizethető
+//  d -> drága
+    @Column(name = "price", length = 1, nullable = false)
+    private String price;
 
-//  0 -> könnyű
-//  1 -> közepes
-//  2 -> nehéz
-    @Column(name = "difficulty")
-    private int difficulty;
+//  e -> könnyű
+//  m -> közepes
+//  h -> nehéz
+    @Column(name = "difficulty", length = 1, nullable = false)
+    private String difficulty;
 
 //  from database
 //    @OneToOne()
@@ -63,20 +63,20 @@ public class Recipe implements Serializable{
     @Column(name = "cuisine_id")
     private Long cuisineId;
 
-//  0 -> reggeli
-//  1 -> tízorai
-//  2 -> ebéd
-//  3 -> uzsonna
-//  4 -> vacsora
-    @Column(name = "part_of_the_day")
-    private int partOfTheDay;
+//  r -> reggeli
+//  t -> tízorai
+//  e -> ebéd
+//  u -> uzsonna
+//  v -> vacsora
+    @Column(name = "part_of_the_day", length = 1, nullable = false)
+    private String partOfTheDay;
 
-//    0 -> tavasz
-//    1 -> nyár
-//    2 -> ősz
-//    3 -> tél
+//    t -> tavasz
+//    n -> nyár
+//    o -> ősz
+//    t -> tél
     @Column(name = "season", length = 1, nullable = false)
-    private int season;
+    private String season;
 //    @OneToMany(
 //            cascade = CascadeType.ALL,
 //            orphanRemoval = true

@@ -18,7 +18,7 @@ public class Ingredient implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+//    @Column(name = "id")
     private Long id;
 
     @Column(name = "name", length = 50, unique = true, nullable = false)

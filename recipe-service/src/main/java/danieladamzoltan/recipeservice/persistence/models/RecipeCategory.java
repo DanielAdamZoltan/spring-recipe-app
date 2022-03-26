@@ -18,7 +18,7 @@ public class RecipeCategory implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+//    @Column(name = "id")
     private Long id;
 
 //    @OneToOne(mappedBy = "recipe_categories")
