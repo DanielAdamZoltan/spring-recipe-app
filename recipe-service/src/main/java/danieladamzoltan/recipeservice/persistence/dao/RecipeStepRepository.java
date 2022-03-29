@@ -1,5 +1,6 @@
 package danieladamzoltan.recipeservice.persistence.dao;
 
+import danieladamzoltan.recipeservice.persistence.models.Recipe;
 import danieladamzoltan.recipeservice.persistence.models.RecipeStep;
 import org.springframework.data.jpa.repository.JpaRepository;
 

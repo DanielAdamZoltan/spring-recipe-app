@@ -7,13 +7,14 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "recipe")
+@Table(name = "RECIPE")
 public class Recipe implements Serializable{
 
     @Id
@@ -52,16 +53,14 @@ public class Recipe implements Serializable{
     private String difficulty;
 
 //  from database
-//    @OneToOne()
-//    @JoinColumn(name = "category_id", referencedColumnName = "id")
-    @Column(name = "category_id")
-    private Long categoryId;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private RecipeCategory categoryId;
 
 //  from database
-//    @OneToOne()
-//    @JoinColumn(name = "cuisine_id", referencedColumnName = "id")
-    @Column(name = "cuisine_id")
-    private Long cuisineId;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cuisine_id", referencedColumnName = "id")
+    private Cuisine cuisineId;
 
 //  r -> reggeli
 //  t -> tízorai
@@ -91,14 +90,6 @@ public class Recipe implements Serializable{
 //    private List<RecipeIngredient> recipeIngredientId = new ArrayList<>();
 
 
-//    @OneToMany(
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true
-//    )
-//    @JoinColumn(name = "recipe_step_id")
-//    @OneToMany(mappedBy = "recipe")
-//    @OneToMany
-    @Column(name = "recipe_step_id")
-    private Long recipeStepId;
-//    private List<RecipeStep> recipeStepId = new ArrayList<>();
+    @OneToMany(mappedBy = "recipeStep")
+    private Set<RecipeStep> recipeStepId;
 }

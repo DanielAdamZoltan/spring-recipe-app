@@ -13,7 +13,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "ingredient")
+@Table(name = "INGREDIENT")
 public class Ingredient implements Serializable {
 
     @Id

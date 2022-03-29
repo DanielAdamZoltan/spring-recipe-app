@@ -13,7 +13,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "recipe_step")
+@Table(name = "RECIPE_STEP")
 public class RecipeStep implements Serializable {
 
     @Id
@@ -21,15 +21,19 @@ public class RecipeStep implements Serializable {
     @Column(name = "id")
     private Long id;
 
+    private Long stepId;
+
 //    @ManyToOne
-//    @JoinColumn(name = "recipe_id", nullable = false)
-//    private Recipe recipe;
-
-    // lenght = 2
-    @Column(name = "step_number", length = 2, nullable = false)
-    private int stepNumber;
-
-    @Column(name = "step_instructions", nullable = false)
-    private String stepInstructions;
+//    @JoinColumn(name = "id", nullable = false)
+//    @Id
+//    @GeneratedValue
+//    private Recipe recipeStep;
+//
+//    // lenght = 2
+//    @Column(name = "step_number", length = 2, nullable = false)
+//    private int stepNumber;
+//
+//    @Column(name = "step_instructions", nullable = false)
+//    private String stepInstructions;
 
 }

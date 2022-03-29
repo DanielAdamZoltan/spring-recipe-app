@@ -5,25 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b528231-1752-486f-9e68-96ee53f52349" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Step.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_liquibase_liquibase_core_4_5_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/dao/RecipeStepRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/dao/RecipeStepRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Cuisine.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Cuisine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Ingredient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Recipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeCategory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeIngredient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/db/changelog/CUISINE/cuisine_create_table.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/db/changelog/CUISINE/cuisine_insert_data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/db/changelog/INGREDIENT/ingredient_create_table.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/db/changelog/INGREDIENT/ingredient_insert_data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/db/changelog/RECIPE_CATEGORY/recipe_category_create_table.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/db/changelog/RECIPE_CATEGORY/recipe_category_insert_data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/db/changelog/db.changelog-master.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +191,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
