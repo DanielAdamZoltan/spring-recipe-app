@@ -19,7 +19,6 @@ public class Recipe implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id")
     private Long id;
 
     @Column(name = "title", length = 60, nullable = false, unique = true)
@@ -27,16 +26,14 @@ public class Recipe implements Serializable{
 
     @Column(name = "user_id", nullable = false)
     private Long userId;
-//
+
     @Column(name = "image_path", nullable = false)
     private String imagePath;
 
-//    1perc - 999perc
-    @Column(name = "time", length = 3, nullable = false)
+//    1perc - 999perc  length = 3
     private int time;
 
-//    1-12
-    @Column(name = "dose", length = 2, nullable = false)
+//    1-12  length = 2
     private int dose;
 
 //  n -> nagyon olcsó
@@ -76,20 +73,16 @@ public class Recipe implements Serializable{
 //    t -> tél
     @Column(name = "season", length = 1, nullable = false)
     private String season;
-//    @OneToMany(
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true
-//    )
-//    @JoinColumn(name = "recipe_ingredient_id")
-//    @OneToMany(mappedBy = "recipe")
-//    @OneToMany
-//    private List<RecipeIngredient> recipeIngredientId = new ArrayList<>();
 
-    @Column(name = "recipe_ingredient_id ")
-    private Long recipeIngredientId;
-//    private List<RecipeIngredient> recipeIngredientId = new ArrayList<>();
+    @OneToMany(mappedBy = "recipeIngredients")
+    private Set<RecipeIngredient> recipeIngredientId;
+
+//    @OneToMany(mappedBy = "recipeStep")
+//    private Set<RecipeStep> recipeStepId;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "recipeStepId", referencedColumnName = "id")
+    private RecipeStep recipeStepId;
 
 
-    @OneToMany(mappedBy = "recipeStep")
-    private Set<RecipeStep> recipeStepId;
 }

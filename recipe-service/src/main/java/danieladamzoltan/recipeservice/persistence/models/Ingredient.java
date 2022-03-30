@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Data
@@ -20,6 +21,9 @@ public class Ingredient implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @Column(name = "id")
     private Long id;
+
+    @OneToMany(mappedBy = "recipeIngredients")
+    private Set<RecipeIngredient> recipeIngredients;
 
     @Column(name = "name", length = 50, unique = true, nullable = false)
     private String name;

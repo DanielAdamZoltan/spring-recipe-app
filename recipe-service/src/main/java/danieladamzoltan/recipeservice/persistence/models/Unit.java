@@ -6,23 +6,20 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "STEP")
-public class Step {
+@Table(name = "UNIT")
+public class Unit implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private RecipeStep recipeStep;
-
-    private int stepNumber;
-
-    private String stepInstructions;
+    @Column(name = "name", length = 13, unique = true)
+    private String name;
 }

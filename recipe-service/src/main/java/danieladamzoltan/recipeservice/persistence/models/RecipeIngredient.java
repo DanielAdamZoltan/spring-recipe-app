@@ -20,6 +20,9 @@ public class RecipeIngredient implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    private Recipe recipeIngredients;
+
 //    @ManyToOne
 //    @JoinColumn(name = "recipe_id", nullable = false)
 //    private Recipe recipe;
@@ -28,10 +31,15 @@ public class RecipeIngredient implements Serializable {
     @Column(name = "amount", length = 4, nullable = false)
     private int amount;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "unit_id", referencedColumnName = "id")
+    private Unit unitId;
+
 //    @OneToOne()
 //    @JoinColumn(name = "ingredient_id", referencedColumnName = "id")
-    @Column(name = "ingredient_id")
-    private Long ingredientId;
+//    @Column(name = "ingredient_id")
+    @ManyToOne
+    private Ingredient recipeIngredient;
 
 
 }

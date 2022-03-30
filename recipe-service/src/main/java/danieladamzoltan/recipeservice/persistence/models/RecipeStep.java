@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Data
@@ -18,10 +19,11 @@ public class RecipeStep implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    private Long stepId;
+
+    @OneToMany(mappedBy = "recipeStep")
+    private Set<Step> steps;
 
 //    @ManyToOne
 //    @JoinColumn(name = "id", nullable = false)
