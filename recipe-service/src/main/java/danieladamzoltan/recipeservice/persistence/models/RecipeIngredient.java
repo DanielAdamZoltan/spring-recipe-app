@@ -16,12 +16,13 @@ import java.io.Serializable;
 @Table(name = "RECIPE_INGREDIENT")
 public class RecipeIngredient implements Serializable {
 
+    //    @ManyToOne
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private Recipe recipeIngredients;
+//    @ManyToOne
+//    private Recipe recipeIngredients;
 
 //    @ManyToOne
 //    @JoinColumn(name = "recipe_id", nullable = false)
@@ -39,7 +40,7 @@ public class RecipeIngredient implements Serializable {
 //    @JoinColumn(name = "ingredient_id", referencedColumnName = "id")
 //    @Column(name = "ingredient_id")
     @ManyToOne
-    private Ingredient recipeIngredient;
+    private Ingredient Ingredient;
 
 
 }

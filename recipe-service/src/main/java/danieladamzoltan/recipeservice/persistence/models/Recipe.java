@@ -74,7 +74,9 @@ public class Recipe implements Serializable {
     @Column(name = "season", length = 1, nullable = false)
     private String season;
 
-    @OneToMany(mappedBy = "recipeIngredients")
+//    mappedBy = "recipeIngredientId"
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "recipeIngredientId", referencedColumnName = "id")
     private Set<RecipeIngredient> recipeIngredientId;
 
     // @OneToMany(mappedBy = "recipeStep")
@@ -93,16 +95,16 @@ public class Recipe implements Serializable {
     // @OneToMany
     // private List<RecipeIngredient> recipeIngredientId = new ArrayList<>();
 
-    @Column(name = "recipe_ingredient_id ")
-    private Long recipeIngredientId;
+//    @Column(name = "recipe_ingredient_id ")
+//    private Long recipeIngredientId;
     // private List<RecipeIngredient> recipeIngredientId = new ArrayList<>();
 
     // @JoinTable(name = "recipe_step_id", joinColumns = @JoinColumn( name = "id"),
     // inverseJoinColumns = @JoinColumn(name = "recipe_step_id")
     // )
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "recipe_step_id", referencedColumnName = "id")
-    private RecipeStep recipeStepId;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "recipe_step_id", referencedColumnName = "id")
+//    private RecipeStep recipeStepId;
 
     // @OneToMany(mappedBy = "recipeStep")
     // private Set<RecipeStep> recipeStepId;

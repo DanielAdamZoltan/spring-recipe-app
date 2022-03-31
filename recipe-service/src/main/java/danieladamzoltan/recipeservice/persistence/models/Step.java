@@ -15,12 +15,13 @@ import javax.persistence.*;
 @Table(name = "STEP")
 public class Step {
 
+//        @ManyToOne
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private RecipeStep recipeStep;
+//    @ManyToOne
+//    private RecipeStep recipeStep;
 
     private int stepNumber;
 

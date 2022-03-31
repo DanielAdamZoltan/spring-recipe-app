@@ -21,8 +21,9 @@ public class RecipeStep implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    @OneToMany(mappedBy = "recipeStep")
+//  mappedBy = "recipeStep"
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "steps", referencedColumnName = "id")
     private Set<Step> steps;
 
 //    @ManyToOne

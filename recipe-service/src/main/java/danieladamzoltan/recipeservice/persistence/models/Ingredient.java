@@ -22,8 +22,8 @@ public class Ingredient implements Serializable {
 //    @Column(name = "id")
     private Long id;
 
-    @OneToMany(mappedBy = "recipeIngredients")
-    private Set<RecipeIngredient> recipeIngredients;
+    @OneToMany(mappedBy = "Ingredient")
+    private Set<RecipeIngredient> Ingredient;
 
     @Column(name = "name", length = 50, unique = true, nullable = false)
     private String name;
