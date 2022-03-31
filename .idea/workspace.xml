@@ -15,6 +15,8 @@
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/RecipeStep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Step.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Step.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe-service/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-service/src/main/java/danieladamzoltan/recipeservice/persistence/models/Recipe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +175,7 @@
       <workItem from="1647609040684" duration="6501000" />
       <workItem from="1647616201555" duration="2789000" />
       <workItem from="1647940924857" duration="28752000" />
+      <workItem from="1648580302239" duration="3986000" />
     </task>
     <servers />
   </component>
@@ -189,6 +192,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
