@@ -9,22 +9,22 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-@Table(name = "RECIPE_STEP")
-public class RecipeStep implements Serializable {
+//@Entity
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@ToString
+//@Table(name = "RECIPE_STEP")
+//public class RecipeStep implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
 
 //  mappedBy = "recipeStep"
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "steps", referencedColumnName = "id")
-    private Set<Step> steps;
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "steps", referencedColumnName = "id")
+//    private Set<Step> steps;
 
 //    @ManyToOne
 //    @JoinColumn(name = "id", nullable = false)
@@ -39,4 +39,4 @@ public class RecipeStep implements Serializable {
 //    @Column(name = "step_instructions", nullable = false)
 //    private String stepInstructions;
 
-}
+//}

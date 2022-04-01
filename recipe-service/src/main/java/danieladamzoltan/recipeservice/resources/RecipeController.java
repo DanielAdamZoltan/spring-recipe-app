@@ -18,21 +18,23 @@ public class RecipeController {
     private final CuisineService cuisineService;
     private final RecipeService recipeService;
     private final RecipeIngredientService recipeIngredientService;
-    private final RecipeStepService recipeStepService;
+//    private final RecipeStepService recipeStepService;
 
     @Autowired
     public RecipeController(
             IngredientService ingredtientService,
             RecipeCategoryService recipeCategoryService,
             CuisineService cuisineService, RecipeService recipeService,
-            RecipeIngredientService recipeIngredientService,
-            RecipeStepService recipeStepService) {
+            RecipeIngredientService recipeIngredientService
+//            ,RecipeStepService recipeStepService
+    )
+    {
         this.ingredientService = ingredtientService;
         this.recipeCategoryService = recipeCategoryService;
         this.cuisineService = cuisineService;
         this.recipeService = recipeService;
         this.recipeIngredientService = recipeIngredientService;
-        this.recipeStepService = recipeStepService;
+//        this.recipeStepService = recipeStepService;
     }
 
 
@@ -191,29 +193,29 @@ public class RecipeController {
 
     //Recipe Step
 
-    @GetMapping("recipe-step/all")
-    public ResponseEntity<List<RecipeStep>> getAllRecipeSteps(){
-        List<RecipeStep> recipeStep = recipeStepService.findAllRecipeSteps();
-        return new ResponseEntity<>(recipeStep, HttpStatus.OK);
-    }
-
-    @PostMapping("recipe-step/add")
-    public ResponseEntity<RecipeStep> addRecipeStep(@RequestBody RecipeStep recipeStep) {
-        RecipeStep newRecipeStep = recipeStepService.addRecipeStep(recipeStep);
-        return new ResponseEntity<>(newRecipeStep, HttpStatus.CREATED);
-    }
-
-
-    @PutMapping("recipe-step/update")
-    public ResponseEntity<RecipeStep> updateRecipeStep(@RequestBody RecipeStep recipeStep) {
-        RecipeStep updateRecipeStep = recipeStepService.updateRecipeStep(recipeStep);
-        return new ResponseEntity<>(updateRecipeStep, HttpStatus.OK);
-    }
-
-    @DeleteMapping("recipe-step/delete/{id}")
-    public ResponseEntity<?> deleteRecipeStep(@PathVariable("id") Long id) {
-        recipeStepService.deleteRecipeStepById(id);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+//    @GetMapping("recipe-step/all")
+//    public ResponseEntity<List<RecipeStep>> getAllRecipeSteps(){
+//        List<RecipeStep> recipeStep = recipeStepService.findAllRecipeSteps();
+//        return new ResponseEntity<>(recipeStep, HttpStatus.OK);
+//    }
+//
+//    @PostMapping("recipe-step/add")
+//    public ResponseEntity<RecipeStep> addRecipeStep(@RequestBody RecipeStep recipeStep) {
+//        RecipeStep newRecipeStep = recipeStepService.addRecipeStep(recipeStep);
+//        return new ResponseEntity<>(newRecipeStep, HttpStatus.CREATED);
+//    }
+//
+//
+//    @PutMapping("recipe-step/update")
+//    public ResponseEntity<RecipeStep> updateRecipeStep(@RequestBody RecipeStep recipeStep) {
+//        RecipeStep updateRecipeStep = recipeStepService.updateRecipeStep(recipeStep);
+//        return new ResponseEntity<>(updateRecipeStep, HttpStatus.OK);
+//    }
+//
+//    @DeleteMapping("recipe-step/delete/{id}")
+//    public ResponseEntity<?> deleteRecipeStep(@PathVariable("id") Long id) {
+//        recipeStepService.deleteRecipeStepById(id);
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
 }

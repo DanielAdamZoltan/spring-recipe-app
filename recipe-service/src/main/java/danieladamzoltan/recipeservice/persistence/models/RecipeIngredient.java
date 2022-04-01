@@ -21,8 +21,9 @@ public class RecipeIngredient implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @ManyToOne
-//    private Recipe recipeIngredients;
+    @ManyToOne
+    @JoinColumn(name = "recipe_id", nullable = false)
+    private Recipe recipeIngredient;
 
 //    @ManyToOne
 //    @JoinColumn(name = "recipe_id", nullable = false)
