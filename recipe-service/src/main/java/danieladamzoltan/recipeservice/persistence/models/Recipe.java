@@ -7,12 +7,13 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 @ToString
 @Table(name = "RECIPE")
 public class Recipe implements Serializable {
@@ -24,8 +25,8 @@ public class Recipe implements Serializable {
     @Column(name = "title", length = 60, nullable = false, unique = true)
     private String title;
 
-    @Column(name = "user_id", nullable = false)
-    private Long userId;
+//    @Column(name = "user_id", nullable = false)
+//    private Long userId;
 
     @Column(name = "image_path", nullable = false)
     private String imagePath;
@@ -78,7 +79,7 @@ public class Recipe implements Serializable {
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "recipeIngredientId", referencedColumnName = "id")
     @OneToMany( mappedBy = "recipeIngredient")
-    private Set<RecipeIngredient> recipeIngredientId;
+    private Set<RecipeIngredient> recipeIngredientId = new HashSet<>();
 
     // @OneToMany(mappedBy = "recipeStep")
     // private Set<RecipeStep> recipeStepId;
@@ -90,7 +91,7 @@ public class Recipe implements Serializable {
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "stepId", referencedColumnName = "id")
     @OneToMany(mappedBy = "recipeStep")
-    private Set<Step> steps;
+    private Set<Step> steps = new HashSet<>();
 
     // @OneToMany(
     // cascade = CascadeType.ALL,
@@ -115,4 +116,13 @@ public class Recipe implements Serializable {
     // @OneToMany(mappedBy = "recipeStep")
     // private Set<RecipeStep> recipeStepId;
 
+
+    public Recipe(String email, String password, String firstName, String lastName) {
+        super();
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        //modified
+    }
 }

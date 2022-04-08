@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -23,7 +24,7 @@ public class Ingredient implements Serializable {
     private Long id;
 
     @OneToMany(mappedBy = "Ingredient")
-    private Set<RecipeIngredient> Ingredient;
+    private Set<RecipeIngredient> Ingredient = new HashSet<>();
 
     @Column(name = "name", length = 50, unique = true, nullable = false)
     private String name;

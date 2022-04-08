@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="recipe-service" />
-        <module name="discovery-server" />
         <module name="user-service" />
+        <module name="discovery-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
